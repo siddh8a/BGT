@@ -1,0 +1,19 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+/* Base Font Setting */
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Custom Gradient Animation Keyframes */
+@keyframes gradient-x {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Utility class for the animation */
+.animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 5s ease infinite;
+}
