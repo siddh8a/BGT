@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballia's Got Talent 2025</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-base': '#0A0A0F',
+                        'dark-surface': '#13131F',
+                        'neon-purple': '#8B5CF6',
+                        'neon-pink': '#EC4899',
+                        'electric-gold': '#FBBF24',
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px theme("colors.neon-purple"), 0 0 60px theme("colors.neon-purple")',
+                        'glow': '0 0 15px -3px rgba(139, 92, 246, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-base text-slate-300 selection:bg-neon-purple selection:text-white">
+
+    <header class="fixed top-4 inset-x-0 z-40 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <nav class="flex items-center justify-between p-3 rounded-2xl bg-dark-surface/70 backdrop-blur-lg border border-white/10 shadow-2xl">
+                <a href="#hero" class="flex items-center space-x-2 pl-2">
+                    <span class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-electric-gold to-neon-pink tracking-tight">
+                        BGT '25
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#about" class="hover:text-white transition-colors">About</a>
+                    <a href="#categories" class="hover:text-white transition-colors">Categories</a>
+                    <button data-modal-open class="group relative px-6 py-2.5 font-bold text-white rounded-xl overflow-hidden">
+                        <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-neon-purple to-neon-pink opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="relative z-10 flex items-center">
+                            Register Now 
+                            <svg class="w-4 h-4 ml-1 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        </span>
+                    </button>
+                </div>
+
+                <button class="md:hidden p-2 text-slate-300 hover:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </nav>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-2 p-4 rounded-2xl bg-dark-surface/90 backdrop-blur-xl border border-white/10 flex flex-col space-y-3">
+                <a href="#about" class="p-2 hover:bg-white/5 rounded-lg transition" onclick="toggleMobileMenu()">About</a>
+                <a href="#categories" class="p-2 hover:bg-white/5 rounded-lg transition" onclick="toggleMobileMenu()">Categories</a>
+                <button data-modal-open class="w-full py-3 mt-2 font-bold text-white bg-gradient-to-r from-neon-purple to-neon-pink rounded-xl" onclick="toggleMobileMenu()">Register Now</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-neon-purple/30 rounded-full blur-[120px] -z-10 mix-blend-screen"></div>
+        <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-neon-pink/20 rounded-full blur-[100px] -z-10 mix-blend-screen"></div>
+        
+        <div class="container mx-auto px-6 text-center z-10">
+            <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-electric-gold/30 bg-electric-gold/10 text-electric-gold text-sm font-semibold tracking-wider uppercase">
+                🚀 The Stage is Set for 2025
+            </div>
+            <h1 class="max-w-5xl mx-auto text-6xl sm:text-7xl md:text-8xl font-extrabold leading-none tracking-tight mb-8">
+                <span class="block text-white">Ballia's</span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-electric-gold via-neon-pink to-neon-purple animate-gradient-x pb-4">
+                    Got Talent
+                </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                From hidden gems to showstoppers. This is the biggest platform to showcase the incredible artistry of Ballia. 
+                <span class="text-slate-200">Your moment is now.</span>
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button data-modal-open class="group min-w-[200px] px-8 py-4 bg-white text-dark-base font-bold text-lg rounded-2xl hover:scale-105 hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.5)] transition-all duration-300">
+                    Audition Now
+                </button>
+                <a href="#categories" class="group flex items-center font-semibold text-white px-6 py-4 rounded-2xl border-2 border-white/10 hover:bg-white/5 transition-colors">
+                    Explore Categories
+                    <span class="ml-2 group-hover:translate-y-1 transition-transform duration-300">↓</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="border-y border-white/5 bg-dark-surface/30 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">₹1L+</h3>
+                <p class="text-sm text-neon-purple font-medium uppercase tracking-wider mt-1">Prize Pool</p>
+            </div>
+            <div>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">15+</h3>
+                <p class="text-sm text-neon-pink font-medium uppercase tracking-wider mt-1">Categories</p>
+            </div>
+            <div>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">5k+</h3>
+                <p class="text-sm text-electric-gold font-medium uppercase tracking-wider mt-1">Live Audience</p>
+            </div>
+            <div>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">1</h3>
+                <p class="text-sm text-slate-400 font-medium uppercase tracking-wider mt-1">Grand Winner</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="categories" class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl sm:text-5xl font-bold text-white mb-4">
+                        Find Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink">Spotlight</span>
+                    </h2>
+                    <p class="text-slate-400 max-w-xl text-lg">Whether you make noise, make art, or make people laugh—we have a mic waiting for you.</p>
+                </div>
+                <button data-modal-open class="hidden md:block text-electric-gold hover:text-white transition font-semibold flex items-center mt-4 md:mt-0">
+                    See all rules <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/0 hover:from-neon-purple/50 hover:to-neon-pink/50 transition-all duration-500">
+                    <div class="relative h-full bg-dark-surface p-6 rounded-[22px] overflow-hidden">
+                        <div class="absolute -right-10 -top-10 w-32 h-32 bg-neon-purple/20 blur-[50px] group-hover:bg-neon-purple/40 transition-all duration-500"></div>
+                        <span class="relative z-10 text-4xl mb-4 block contrast-125 brightness-125">🎤</span>
+                        <h4 class="relative z-10 text-xl font-bold text-white mb-2">Vocals</h4>
+                        <p class="relative z-10 text-sm text-slate-400 group-hover:text-slate-200 transition-colors">
+                            Solo, Choir, Rap, Beatboxing. Let your voice echo.
+                        </p>
+                    </div>
+                </div>
+                <div class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/0 hover:from-neon-pink/50 hover:to-electric-gold/50 transition-all duration-500">
+                    <div class="relative h-full bg-dark-surface p-6 rounded-[22px] overflow-hidden">
+                        <div class="absolute -right-10 -top-10 w-32 h-32 bg-neon-pink/20 blur-[50px] group-hover:bg-neon-pink/40 transition-all duration-500"></div>
+                        <span class="relative z-10 text-4xl mb-4 block contrast-125 brightness-125">💃</span>
+                        <h4 class="relative z-10 text-xl font-bold text-white mb-2">Dance</h4>
+                        <p class="relative z-10 text-sm text-slate-400 group-hover:text-slate-200 transition-colors">
+                            Classical, Hip-hop, Contemporary. Move the world.
+                        </p>
+                    </div>
+                </div>
+                <div class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/0 hover:from-electric-gold/50 hover:to-neon-purple/50 transition-all duration-500">
+                    <div class="relative h-full bg-dark-surface p-6 rounded-[22px] overflow-hidden">
+                        <div class="absolute -right-10 -top-10 w-32 h-32 bg-electric-gold/20 blur-[50px] group-hover:bg-electric-gold/40 transition-all duration-500"></div>
+                        <span class="relative z-10 text-4xl mb-4 block contrast-125 brightness-125">🎸</span>
+                        <h4 class="relative z-10 text-xl font-bold text-white mb-2">Music</h4>
+                        <p class="relative z-10 text-sm text-slate-400 group-hover:text-slate-200 transition-colors">
+                            Bands, Solo Instrumentalists. Shred it.
+                        </p>
+                    </div>
+                </div>
+                <div class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/0 hover:from-emerald-500/50 hover:to-cyan-500/50 transition-all duration-500">
+                    <div class="relative h-full bg-dark-surface p-6 rounded-[22px] overflow-hidden">
+                        <div class="absolute -right-10 -top-10 w-32 h-32 bg-cyan-500/20 blur-[50px] group-hover:bg-cyan-500/40 transition-all duration-500"></div>
+                        <span class="relative z-10 text-4xl mb-4 block contrast-125 brightness-125">🎭</span>
+                        <h4 class="relative z-10 text-xl font-bold text-white mb-2">Variety</h4>
+                        <p class="relative z-10 text-sm text-slate-400 group-hover:text-slate-200 transition-colors">
+                            Comedy, Magic, Poetry, Stunts. Surprise us.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-dark-surface/50 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+                    More Than Just A Competition.
+                </h2>
+                <div class="space-y-6 text-lg text-slate-300">
+                    <p>
+                        Ballia's Got Talent started as a small community gathering and has exploded into the region's premier entertainment showcase.
+                    </p>
+                    <p>
+                        We provide professional lighting, sound engineers, and a massive audience so you can experience what it's truly like to be a star.
+                    </p>
+                </div>
+                
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="aspect-video rounded-3xl bg-gradient-to-tr from-neon-purple to-dark-base p-1 relative rotate-3 hover:rotate-0 transition-all duration-700 ease-out">
+                     <div class="w-full h-full bg-dark-surface rounded-[20px] flex items-center justify-center overflow-hidden relative">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-50 mix-blend-overlay"></div>
+                        <button data-modal-open class="relative z-20 w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group hover:scale-110 transition">
+                            <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <div class="container mx-auto px-6">
+            <a href="#hero" class="text-2xl font-extrabold text-white tracking-tight">BGT '25</a>
+            <div class="flex justify-center space-x-8 my-6 text-sm font-medium text-slate-400">
+                <a href="#" class="hover:text-neon-purple transition">Rules</a>
+                <a href="#" class="hover:text-neon-purple transition">Sponsors</a>
+                <a href="#" class="hover:text-neon-purple transition">Contact</a>
+            </div>
+            <p class="text-xs text-slate-600">© 2025 Ballia's Got Talent. Built for the stars.</p>
+        </div>
+    </footer>
+
+    <div id="registration-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+        <div class="absolute inset-0 bg-dark-base/60 backdrop-blur-md transition-opacity duration-300 opacity-0" id="modal-backdrop"></div>
+        <div class="relative w-full max-w-md transform scale-95 transition-all duration-300 opacity-0" id="modal-content">
+            <div class="relative overflow-hidden rounded-3xl bg-dark-surface border border-white/10 shadow-2xl shadow-neon-purple/20">
+                <div class="h-2 w-full bg-gradient-to-r from-neon-purple via-neon-pink to-electric-gold"></div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-2xl font-bold text-white">Claim Your Stage 🎤</h3>
+                        <button data-modal-close class="text-slate-400 hover:text-white transition p-1 hover:bg-white/10 rounded-full">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </div>
+                    <div id="submission-message"></div>
+                    <form id="registration-form" class="space-y-5">
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-300 ml-1">Stage Name / Full Name</label>
+                            <input type="text" name="name" required placeholder="e.g. DJ Amit or Riya Singh" class="w-full bg-dark-base/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-neon-purple focus:ring-1 focus:ring-neon-purple transition">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-300 ml-1">Contact Email</label>
+                            <input type="email" name="email" required placeholder="you@example.com" class="w-full bg-dark-base/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-neon-purple focus:ring-1 focus:ring-neon-purple transition">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-medium text-slate-300 ml-1">Your Talent</label>
+                            <div class="relative">
+                                <select name="talent" required class="w-full appearance-none bg-dark-base/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neon-purple focus:ring-1 focus:ring-neon-purple transition">
+                                    <option value="" class="bg-dark-surface">Select a category...</option>
+                                    <option value="vocal" class="bg-dark-surface">🎤 Vocal Performance</option>
+                                    <option value="dance" class="bg-dark-surface">💃 Dance & Movement</option>
+                                    <option value="instrumental" class="bg-dark-surface">🎸 Instrumental Music</option>
+                                    <option value="variety" class="bg-dark-surface">🎭 Comedy / Magic / Variety</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full py-4 mt-6 bg-gradient-to-r from-neon-purple to-neon-pink text-white font-bold text-lg rounded-xl hover:opacity-90 hover:shadow-glow transition-all duration-300 active:scale-[0.98]">
+                            Submit Application
+                        </button>
+                        <p class="text-center text-xs text-slate-500 mt-4">We'll email you audition details within 48 hours.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
